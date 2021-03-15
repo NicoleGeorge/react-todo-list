@@ -1,9 +1,12 @@
-const Todo = ({todo}) => {
-    return (
-        <div className='todo'>
-            <h3>{todo.text}</h3>
-        </div>
-    )
-}
+import { FaTimes } from "react-icons/fa";
 
-export default Todo
+const Todo = ({ todo }) => {
+  return (
+    <div className="todo">
+      <h3>{todo.text} <FaTimes style={{color: 'red', cursor: 'pointer'}} /></h3>
+      <p>{todo.day}</p>
+    </div>
+  );
+};
+
+export default Todo;
