@@ -29,7 +29,7 @@ const Todos = () => {
   return (
     <>
       {todos.map((todo) => (
-        <h3>{todo.text}</h3>
+        <h3 key={todo.id}>{todo.text}</h3>
       ))}
     </>
   );
