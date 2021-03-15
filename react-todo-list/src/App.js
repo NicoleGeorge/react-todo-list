@@ -60,7 +60,10 @@ const App = () => {
 
   return (
     <div className="container">
-      <Header onAdd={() => setShowAddTodo(!showAddTodo)} />
+      <Header
+        onAdd={() => setShowAddTodo(!showAddTodo)}
+        showAdd={showAddTodo}
+      />
       {showAddTodo && <AddTodo onAdd={addTodo} />}
       {todos.length > 0 ? (
         <Todos todos={todos} onDelete={deleteTodo} onToggle={toggleReminder} />
