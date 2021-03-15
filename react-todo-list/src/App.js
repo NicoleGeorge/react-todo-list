@@ -1,6 +1,7 @@
+import { useState } from 'react';
 import Header from './components/Header';
 import Todos from './components/Todos';
-import { useState } from 'react';
+import AddTodo from './components/AddTodo';
 
 const App = () => {
   const [todos, setTodos] = useState([
@@ -50,6 +51,7 @@ const App = () => {
   return (
     <div className="container">
       <Header />
+      <AddTodo />
       {todos.length > 0 ? (
         <Todos todos={todos} onDelete={deleteTodo} onToggle={toggleReminder} />
       ) : (
