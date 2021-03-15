@@ -4,6 +4,8 @@ import Todos from './components/Todos';
 import AddTodo from './components/AddTodo';
 
 const App = () => {
+  const [showAddTodo, setShowAddTodo] = useState(false);
+
   const [todos, setTodos] = useState([
     {
       id: 1,
@@ -59,7 +61,7 @@ const App = () => {
   return (
     <div className="container">
       <Header />
-      <AddTodo onAdd={addTodo} />
+      {showAddTodo && <AddTodo onAdd={addTodo} />}
       {todos.length > 0 ? (
         <Todos todos={todos} onDelete={deleteTodo} onToggle={toggleReminder} />
       ) : (
