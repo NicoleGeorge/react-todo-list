@@ -39,8 +39,13 @@ const App = () => {
 
   // TOGGLE Reminder notification
   const toggleReminder = (id) => {
-    console.log(id)
-  }
+    // console.log(id)
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, reminder: !todo.reminder } : todo
+      )
+    );
+  };
 
   return (
     <div className="container">
