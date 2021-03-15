@@ -37,11 +37,16 @@ const App = () => {
     // console.log('delete', id);
   };
 
+  // TOGGLE Reminder notification
+  const toggleReminder = (id) => {
+    console.log(id)
+  }
+
   return (
     <div className="container">
       <Header />
       {todos.length > 0 ? (
-        <Todos todos={todos} onDelete={deleteTodo} />
+        <Todos todos={todos} onDelete={deleteTodo} onToggle={toggleReminder} />
       ) : (
         'Nothing to do today!'
       )}

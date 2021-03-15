@@ -1,8 +1,8 @@
 import { FaTimes } from 'react-icons/fa';
 
-const Todo = ({ todo, onDelete }) => {
+const Todo = ({ todo, onDelete, onToggle }) => {
   return (
-    <div className="todo">
+    <div className="todo" onDoubleClick={() => onToggle(todo.id)}>
       <h3>
         {todo.text}{' '}
         <FaTimes
