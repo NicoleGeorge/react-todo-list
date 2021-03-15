@@ -31,6 +31,11 @@ const App = () => {
     },
   ]);
 
+  // ADD Todo
+  const addTodo = (todo) => {
+    console.log(todo);
+  };
+
   // DELETE Todo
 
   const deleteTodo = (id) => {
@@ -51,7 +56,7 @@ const App = () => {
   return (
     <div className="container">
       <Header />
-      <AddTodo />
+      <AddTodo onAdd={addTodo} />
       {todos.length > 0 ? (
         <Todos todos={todos} onDelete={deleteTodo} onToggle={toggleReminder} />
       ) : (
