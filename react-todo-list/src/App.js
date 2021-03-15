@@ -18,7 +18,7 @@ const App = () => {
     },
     {
       id: 3,
-      text: 'Buy Cffee',
+      text: 'Buy Coffee',
       day: 'March 22 at 7:30am',
       reminder: true,
     },
@@ -33,13 +33,18 @@ const App = () => {
   // DELETE Todo
 
   const deleteTodo = (id) => {
-    console.log('delete', id);
+    setTodos(todos.filter((todo) => todo.id !== id));
+    // console.log('delete', id);
   };
 
   return (
     <div className="container">
       <Header />
-      <Todos todos={todos} onDelete={deleteTodo} />
+      {todos.length > 0 ? (
+        <Todos todos={todos} onDelete={deleteTodo} />
+      ) : (
+        'Nothing to do today!'
+      )}
     </div>
   );
 };
