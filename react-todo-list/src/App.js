@@ -33,7 +33,10 @@ const App = () => {
 
   // ADD Todo
   const addTodo = (todo) => {
-    console.log(todo);
+    const id = Math.floor(Math.random() * 10000) + 1;
+    // console.log(id);
+    const newTodo = { id, ...todo };
+    setTodos([...todos, newTodo]);
   };
 
   // DELETE Todo
